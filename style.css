@@ -1,25 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    font-family: 'Poppins', sans-serif;
-    color:white;
-    margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ff4b1f, #1fddff, #28a745, #9c27b0);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .clock-container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(175, 175, 186, 0.2);
+  50% {
+    background-position: 100% 50%;
   }
-  
-  #clock {
-    font-size: 3rem;
-    letter-spacing: 3px;
-    margin-top: 20px;
+  100% {
+    background-position: 0% 50%;
   }
-  
+}
+
+.clock-container {
+  text-align: center;
+  padding: 50px 70px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+#clock {
+  font-size: 4rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #00eaff;
+  }
+  50% {
+    text-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff, 0 0 60px #00eaff;
+  }
+}
+
+#date {
+  font-size: 1.2rem;
+  color: #e0f7fa;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
